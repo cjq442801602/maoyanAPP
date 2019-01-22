@@ -92,14 +92,14 @@ export default {
   },
   methods: {
     // 获取数据的方法
+    
     async getNews() {
-      let data = await this.$axios.get("http://localhost:3020");
-      // let images=data.movieList.replace("w.h","128.180");
-      // console.log(images)
-      console.log(data.data.movieList);
-      this.news = this.news.concat(data.data.movieList);
-    }
+      var data = await this.$axios.get('http://10.3.143.74:4008/movie/ajax/movieOnInfoList?token=')
+        console.log(data)
+        this.news=data.data.movieList
+    } 
   },
+ 
   //过滤器
   filters: {
   capitalize: function (value) {
